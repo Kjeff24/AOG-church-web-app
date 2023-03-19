@@ -1,0 +1,42 @@
+{% extends 'mainpage.html' %} {% load static %} {% block content %}
+<div class="events-bg text-white">
+    {% include 'mainnavbar.html' %}
+    <div class="events mx-5 my-5">
+        <h3>UPCOMING EVENTS</h3>
+        <div class="line"></div>
+        <div class="">
+            {% if liveSessions %}
+            <div>
+                {% for session in liveSessions %}
+                <div class="row mx-2 align-items-center">
+                    <div class="col-12 col-lg-6 my-auto">
+                            <h4 style="font-weight: bold">{{session.title}}</h4>
+                            <h5>{{session.speaker}}</h5>
+                            <p>{{session.description}}</p>
+                            <p>{{session.datetime}}</p>
+                    </div>
+                    <div class="col-12 col-lg-6 my-auto">
+                        {% if session.youtubeLink %}
+                        <div class="embed-responsive embed-responsive-16by9">{{session.youtubeLink|safe}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="line-long my-3"></div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="calender">
+                <img
+                    src="{% static 'images/calender.svg' %}"
+                    alt=""
+                    srcset=""
+                />
+                <p class="calender-text">There are no upcoming events.</p>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

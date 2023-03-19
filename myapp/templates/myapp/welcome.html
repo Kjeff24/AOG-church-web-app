@@ -1,0 +1,18 @@
+{% extends 'startpage.html' %} 
+
+{% block content %}
+<div class="start-page-body">
+    <div class="startpage-container">
+        {% include 'startnavbar.html' %} 
+        <div>
+            <h1 class="start-main-title">
+                Welcome to Assemblies of God, Dumamis Centre
+            </h1>
+            <div class="start-buttons">
+                <a href="{% url 'login' %}" class="start-input">Login</a>
+                <a href="{% url 'signup' %}" class="start-input">Sign up</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

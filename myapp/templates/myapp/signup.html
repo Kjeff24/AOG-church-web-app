@@ -1,0 +1,73 @@
+{% extends 'startpage.html' %} {% load static %} {% block content %}
+<div class="signup-page-body">
+    <div class="signup-container">
+        {% include 'startnavbar.html' %}
+        <div class="container signup-form-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-4 col-sm-12 my-auto">
+                    <div class="text-white signup-title">
+                        <span>
+                            Love God, Love People, and make Disciples of Jesus
+                            Christ.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12 pt-3 column-2">
+                    <div class="signup-form-container">
+                        <form class="form" action="" method="POST">
+                            {% csrf_token %}
+                            <img
+                                src="{% static 'images/icon1.svg' %}"
+                                alt="icon1"
+                                class="form-icon"
+                            />
+                            <br />
+                            {% for field in form %}
+                            <div class="form-group">
+                                <label for="room_name">{{field.label}}</label>
+                                {{field}}
+                            </div>
+                            {% endfor %} 
+                            <!-- <input
+                                type="text"
+                                name="username"
+                                placeholder="Phone number"
+                                class="signup-input-field"
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                class="signup-input-field"
+                            />
+                            <input
+                                type="password"
+                                name="password1"
+                                placeholder="Password"
+                                class="signup-input-field"
+                            />
+                            <input
+                                type="password"
+                                name="password2"
+                                placeholder="Confirm Password"
+                                class="signup-input-field"
+                            /> -->
+                            <br />
+                            <button type="submit" class="signup-button">
+                                Signup
+                            </button>
+                            {% if messages %}
+                            <ul class="messages" >
+                                {% for message in messages %}
+                                <li style="list-style: none; color: red;">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

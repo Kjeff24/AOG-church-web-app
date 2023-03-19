@@ -1,0 +1,19 @@
+{% extends 'startpage.html' %} {% load static %} {% block content %}
+<div class="success-page-body">
+    <div class="success-container-body">
+        {% include 'mainnavbar.html' %}
+        <div class="container success-form-content">
+            <div class="success-form-container">
+                <h2 class="congrats-text-title">CONGRATULATIONS</h2>
+                <img src="{% static 'images/success.svg' %}" alt="icon1" />
+                <h3 class="congrats-message">
+                    Thanks for Signing Up God Bless you!!
+                </h3>
+                <a href="{% url 'homepage' %}" class="continue-button"
+                    >Continue</a
+                >
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

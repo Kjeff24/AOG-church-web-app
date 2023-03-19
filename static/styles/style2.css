@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+.navbar {
+    background-color: #2f3080;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nav-link-style {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-link-style:hover {
+    background-color: #ffffff;
+    padding: 2px 5px;
+    color: black;
+    border-radius: 5px;
+}
+li.active a {
+    color: rgb(0, 0, 0);
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    background-color: #2f3080;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+.home-bg, .about-bg{
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(186,186,249,1) 100%);}
+
+.home-container {
+    padding: 20px 15px 0 15px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.share-button {
+    padding: 10px 22px;
+    background: #f6f4f4;
+    border-radius: 20px;
+}
+
+.events {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.events-bg {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        159deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(71, 71, 88, 1) 35%,
+        rgba(47, 48, 128, 1) 100%
+    );
+}
+
+.department-bg{
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        159deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(71, 71, 88, 1) 35%,
+        rgba(47, 48, 128, 1) 100%
+    );
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.calender {
+    display: flex;
+}
+
+.calender-text {
+    margin: auto 0;
+}
+
+.heading-1 {
+    display: flex;
+    margin-left: 20px;
+}
+
+.heading-style {
+    color: white;
+    padding: 10px 32px;
+    background-color: #2f3080;
+    font-weight: 700;
+    margin-right: 30px;
+}
+
+.line {
+    width: 346px;
+    height: 0px;
+    border: 1px solid #bab3b3;
+}
+
+.line-long {
+    width: 100%;
+    height: 0px;
+    border: 1px solid #bab3b3;
+}
+
+.history {
+    margin-top: 10px;
+}
+
+.work {
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 21px;
+    color: #a7a6a6;
+}
+
+.work-title {
+    font-weight: 800;
+    font-size: 21px;
+    line-height: 25px;
+    color: #3e7bc2;
+}
+
+table,
+th,
+td {
+    padding: 30px 20px 30px 0;
+    margin-top: 20px;
+}
+
+td:first-child {
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 21px;
+
+    color: #626364;
+}
+
+caption {
+    caption-side: top;
+}
+
+.profile-name {
+    font-weight: 800;
+    font-size: 37px;
+    line-height: 45px;
+    color: #000000;
+}
+
+.location {
+    display: flex;
+}
+
+.position,
+.ranking {
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 21px;
+    color: #3e7bc2;
+}
+
+.rating {
+    font-weight: 800;
+    font-size: 37px;
+    line-height: 45px;
+    color: #000000;
+}
+
+.profile-container {
+    padding: 40px 50px;
+    margin: auto 10px auto 20px;
+}

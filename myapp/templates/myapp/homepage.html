@@ -1,0 +1,128 @@
+{% extends 'mainpage.html' %} {% load static %} {% block content %}
+<div class="home-bg">
+    {% include 'mainnavbar.html' %}
+    <div class="home-container">
+        <div class="row mt-2">
+            <div class="col-12 col-md-12 col-lg-6 mt-3 mt-md-3">
+                <img
+                    src="{% static 'images/homepageImage1.png' %}"
+                    width="100%"
+                    class="img-fluid"
+                    alt="Elders"
+                    srcset=""
+                />
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 mt-3 mt-md-3">
+                {% for new in news %}
+                <div class="row mt-2">
+                    <div class="col col-md-3 col-sm-3">
+                        <img
+                            src="{{new.image.url}}"
+                            alt="photo"
+                            class="img-fluid"
+                            width="185px"
+                        />
+                    </div>
+                    <div class="col col-md-9 col-sm-9">
+                        <p class="description">
+                            <a target="_blank" href="{{new.headlineLink}}">
+                                {{new.headline}}
+                            </a>
+                            {{new.content}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="socials">
+                    <button type="submit" class="share-button m-sm-3">
+                        <img src="{% static 'images/search.svg' %}" alt="" />Share
+                    </button>
+                    <img
+                        src="{% static 'images/instagram.svg' %}"
+                        alt="instagram"
+                        class="img-fluid m-sm-3"
+                        width="31px"
+                    />
+                    <img
+                        src="{% static 'images/whatsapp.svg' %}"
+                        alt="whatsapp"
+                        class="img-fluid m-sm-3"
+                        width="31px"
+                    />
+                    <img
+                        src="{% static 'images/facebook.svg' %}"
+                        alt="facebook"
+                        class="img-fluid m-sm-3"
+                        width="31px"
+                    />
+                </div> -->
+            </div>
+        </div>
+        <div>
+            <div class="events mt-5">
+                <h3>UPCOMING EVENTS</h3>
+                <div class="line"></div>
+                <div>
+                    {% if liveSessions %}
+                    <div class="row">
+                        {% for session in liveSessions %}
+                        <div class="col-lg-6">
+                            <h4 style="font-weight: bold">{{session.title}}</h4>
+                            <h5>{{session.speaker}}</h5>
+                            <p>{{session.description}}</p>
+                            <p>{{session.datetime}}</p>
+                            <!-- {% if session.youtubeLink %}
+                                <p>
+                                    <a target="_blank" href="{{session.youtubeLink}}"
+                                    >Look up</a
+                                    >
+                                </p>
+                                {% endif %}  -->
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <p>
+                        <a
+                            href="{% url 'upcomingevents' %}"
+                            style="text-decoration: none"
+                            >more</a
+                        >
+                    </p>
+                    {% else %}
+                    <div class="calender">
+                        <img
+                            src="{% static 'images/calender.svg' %}"
+                            alt=""
+                            srcset=""
+                        />
+                        <p class="calender-text">
+                            There are no upcoming events.
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="heading-1">
+                <span class="heading-style">DUNAMIS CENTRE</span>
+                <span class="heading-style">NATIONAL</span>
+                <span class="heading-style">LATEST NEWS</span>
+            </div>
+            <div class="history">
+                <h5 class="fw-bold">HISTORY OF ASSEMBLIES OF GOD, GHANA</h5>
+                <p>
+                    The Assemblies of God, Ghana is a member of the worldwide
+                    fellowship of Assemblies of God spread in 212 countries of
+                    the world. Missionaries from Assemblies of God, U.S.A. in
+                    the persons of Rev. Lloyd and Margaret Shirer, who were then
+                    in Moshiland, Ouagadougou now Burkina Faso crossed over to
+                    the Northern Region of the then Gold Coast on horse backs in
+                    the early 1931. With their first recruits, Miss Beulah
+                    Buchhwalter and Guy Hickok, they started the first
+                    Assemblies of God congregation in Yendi.
+                    <a href="{% url 'about' %}">more...</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

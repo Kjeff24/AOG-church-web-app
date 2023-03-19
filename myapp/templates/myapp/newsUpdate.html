@@ -1,0 +1,24 @@
+{% extends 'mainpage.html' %} {% load static %} {% block content %}
+<div>
+    {% include 'mainnavbar.html' %} {% for new in news %}
+    <div class="row mt-2">
+        <div class="col col-md-3 col-sm-3">
+            <img
+                src="{{new.image.url}}"
+                alt="photo"
+                class="img-fluid"
+                width="185px"
+            />
+        </div>
+        <div class="col col-md-9 col-sm-9">
+            <p class="description">
+                <a target="_blank" href="{{new.headlineLink}}">
+                    {{new.headline}}
+                </a>
+                {{new.content}}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

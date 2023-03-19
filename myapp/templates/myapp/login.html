@@ -1,0 +1,46 @@
+{% extends 'startpage.html' %} {% load static %} {% block content %}
+<div class="login-body">
+    <div class="login-container">
+        {% include 'startnavbar.html' %}
+        <div class="container login-form-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-4 col-sm-12 my-auto">
+                    <div class="login-title text-white">
+                        <span class="">
+                            Know Jesus, Serve God, Spread the Gospel
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12 pt-3 column-2">
+                    <div class="login-form-container">
+                        <form class="form" action="" method="POST">
+                            {% csrf_token %}
+                            <img
+                                src="{% static 'images/icon1.svg' %}"
+                                alt="icon1"
+                                class="form-icon"
+                            />
+                            <br />
+                            <input
+                                type="text"
+                                name="username"
+                                placeholder="Username"                              class="login-input-field"
+                            />
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                class="login-input-field"
+                            />
+                            <br />
+                            <button type="submit" class="login-button">
+                                Login
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

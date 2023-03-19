@@ -1,0 +1,90 @@
+{% extends 'mainpage.html' %} {% load static %} {% block content %}
+<div>
+    {% include 'mainnavbar.html' %} {% for profile in profiles %}
+
+    <div class="profile-container">
+        <div class="row mt-2">
+            <div class="col-12 col-md-7 col-lg-7 mt-3 mt-md-3">
+                <img  src="{{ profile.image.url }}" alt="profile" class="img-fluid w-100 h-auto" />
+                <div>
+                    <p class="work mt-3">Work</p>
+                    <div class="line"></div>
+                    <div>
+                        <p class="mt-4 work-title">ACCRA BRANCH</p>
+                        <p class="work-branch"></p>
+                        <p>Koforidua highways</p>
+                        <p>ASK/k13, New Juabeng</p>
+                    </div>
+                    <div>
+                        <p class="mt-2 work-title">KUMASI BRANCH</p>
+                        <p class="work-branch"></p>
+                        <p>Koforidua highways</p>
+                        <p>ASK/k13, New Juabeng</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="work mt-3">Role</p>
+                    <div class="line"></div>
+                    <p>{{profile.position}}</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 col-lg-5 mt-3 mt-md-3">
+                <div class="d-flex gap-3">
+                    <h1 class="profile-name">{{profile.name}}</h1>
+                    <div class="location">
+                        <img src="{% static 'images/location.svg' %}" alt="" width="24px" />
+                        <p class="my-auto">{{profile.city}} - Ghana</p>
+                    </div>
+                </div>
+                <p class="position">C.E.O of icloudGH</p>
+                <p class="ranking">RANKINGS</p>
+                <div class="d-flex gap-3">
+                    <p class="my-auto rating">{{profile.rating}}</p>
+                    <img src="{% static 'images/star.svg' %}" alt="favourite" srcset="" />
+                </div>
+                <table>
+                    <tbody>
+                        <caption>
+                            CONTACT INFORMATION
+                        </caption>
+                        <div class="line"></div>
+                        <tr>
+                            <td>Phone:</td>
+                            <td>{{profile.phone_number}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>{{profile.address}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{profile.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Position:</td>
+                            <td>{{profile.position}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <caption>
+                            BASIC INFORMATION
+                        </caption>
+                        <tr>
+                            <td>Birthday:</td>
+                            <td>{{profile.birthday}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>{{profile.gender}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}
